@@ -11,6 +11,7 @@ class AppColors {
   //Text Colors
   static const Color primaryText = Color(0xFF17181C);
   static const Color secondaryText = Color(0xFFAAAEBB);
+  static const Color trinaryText = Color(0xffEFF1F3);
   static const Color redText = Color(0xFFD52941);
 
 
