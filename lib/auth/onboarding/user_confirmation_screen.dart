@@ -38,7 +38,10 @@ class UserConfirmationScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 50.h),
-            CustomPrimaryButton(text: "New User", onTap: ()=> Get.toNamed(AppRoutes.getOnboardingRoute()),),
+            CustomPrimaryButton(
+              text: "New User",
+              onTap: () => Get.toNamed(AppRoutes.getOnboardingRoute()),
+            ),
             SizedBox(height: 12.h),
             CustomSecondaryButton(text: "Existing Account"),
           ],

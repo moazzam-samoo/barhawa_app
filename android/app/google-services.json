@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3297306738",
+    "project_id": "barhawa-app",
+    "storage_bucket": "barhawa-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3297306738:android:7e44b4618553a5fa2e3aeb",
+        "android_client_info": {
+          "package_name": "com.barhawa_business.barhawa_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsUOEeTyiS1tlwStp7jHq_S-cmflasEQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

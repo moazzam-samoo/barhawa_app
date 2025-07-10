@@ -5,9 +5,9 @@ import 'package:barhawa_app/widgets/global/secondary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +75,12 @@ class GetStartedScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                CustomPrimaryButton(text: "Login", color: AppColors.primary),
+                CustomPrimaryButton(
+                  text: "Login",
+                  onTap: () {},
+                  color: AppColors.primary,
+                ),
+
                 SizedBox(height: 12.h),
                 CustomSecondaryButton(
                   text: "Create Account",
