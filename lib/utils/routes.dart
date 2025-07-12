@@ -3,8 +3,8 @@ import 'package:barhawa_app/auth/onboarding/onboarding_screen.dart';
 import 'package:barhawa_app/auth/onboarding/user_confirmation_screen.dart';
 import 'package:barhawa_app/pages/screens/congratulation_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
-
 import '../auth/splash_screen.dart';
+
 
 class AppRoutes {
   static String splash = "/";

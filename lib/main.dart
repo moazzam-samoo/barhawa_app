@@ -28,10 +28,9 @@ class MyApp extends StatelessWidget {
         //replaced Material app to GetMaterialApp for stateManagement
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          builder: EasyLoading.init(),
           title: 'Barhawa App',
           //Defined own routes with GETx state management for Routing Easily and understandable
-          initialRoute: AppRoutes.getSplashRoute(),
+          initialRoute: AppRoutes.getCongratulationScreen(),
           getPages: AppRoutes.routes,
         );
       },
