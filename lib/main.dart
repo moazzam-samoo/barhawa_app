@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Barhawa App',
           //Defined own routes with GETx state management for Routing Easily and understandable
-          initialRoute: AppRoutes.getCongratulationScreen(),
+          initialRoute: AppRoutes.getShopCreationScreen(),
           getPages: AppRoutes.routes,
         );
       },
