@@ -1,19 +1,21 @@
 import 'package:barhawa_app/utils/app_text_styles.dart';
 import 'package:barhawa_app/utils/colors.dart';
+import 'package:barhawa_app/utils/routes.dart';
 import 'package:barhawa_app/widgets/global/primary_button.dart';
 import 'package:barhawa_app/widgets/global/secondary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // 🔽 Background image
+          // 🔽 Background Image
           Positioned.fill(
             child: Image.asset(
               'assets/images/onboarding_last.png',
@@ -21,12 +23,14 @@ class GetStartedScreen extends StatelessWidget {
             ),
           ),
 
-          // 🔽 Dark overlay
+          // 🔽 Semi-transparent black overlay
           Positioned.fill(
-            child: Container(color: Colors.black.withOpacity(0.55)),
+            child: Container(
+              color: Colors.black.withOpacity(0.55),
+            ),
           ),
 
-          // 🔽 Top Text Content
+          // 🔽 Main Text Section (Top)
           Positioned(
             top: 70.h,
             left: 22.w,
@@ -34,11 +38,12 @@ class GetStartedScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Headline with Rich Styling
                 RichText(
                   textAlign: TextAlign.start,
                   text: TextSpan(
                     style: AppTextStyles.mainDisplay.copyWith(
-                      fontSize: 38,
+                      fontSize: 38.sp,
                       fontWeight: FontWeight.w500,
                       color: Colors.white,
                     ),
@@ -56,7 +61,10 @@ class GetStartedScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+
                 SizedBox(height: 5.h),
+
+                // Subtext Description
                 Text(
                   "Track sales, print receipts, and manage your business with ease.",
                   style: AppTextStyles.bodyLarge.copyWith(
@@ -67,7 +75,7 @@ class GetStartedScreen extends StatelessWidget {
             ),
           ),
 
-          // 🔽 Bottom Buttons
+          // 🔽 Bottom Buttons Section
           Positioned(
             left: 22.w,
             right: 22.w,
@@ -75,17 +83,25 @@ class GetStartedScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                // Login Button
                 CustomPrimaryButton(
                   text: "Login",
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(AppRoutes.getCongratulationScreen());
+                  },
                   color: AppColors.primary,
                 ),
 
                 SizedBox(height: 12.h),
+
+                // Create Account Button
                 CustomSecondaryButton(
                   text: "Create Account",
                   color: Colors.white,
                   textColor: Colors.white,
+                  onTap: () {
+                    // TODO: Navigate to signup screen
+                  },
                 ),
               ],
             ),

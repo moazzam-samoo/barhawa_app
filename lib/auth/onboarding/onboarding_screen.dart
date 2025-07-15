@@ -8,14 +8,15 @@ import 'package:barhawa_app/widgets/global/secondary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  final controller = OnboardingController();
-  final PageController _pageController = PageController();
-
   OnboardingScreen({super.key});
+
+  // Controller to manage current onboarding page and data
+  final controller = OnboardingController();
+
+  // PageController for controlling the PageView scroll
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,44 +24,58 @@ class OnboardingScreen extends StatelessWidget {
       body: PageView.builder(
         controller: _pageController,
         itemCount: controller.onboardingPages.length,
+
+        // Update current page index in controller
         onPageChanged: (index) {
-          controller.currentPage.value = index; // update current page
+          controller.currentPage.value = index;
         },
+
+        // Build each onboarding page
         itemBuilder: (context, index) {
+          final page = controller.onboardingPages[index];
+
           return Padding(
             padding: EdgeInsets.only(top: 50.h, left: 25.w, right: 25.w),
             child: Column(
               children: [
-                imageShade(controller.onboardingPages[index].imageAsset),
+                // Onboarding Image
+                imageShade(page.imageAsset),
+
                 SizedBox(height: 20.h),
+
+                // Onboarding Title
                 Text(
-                  controller.onboardingPages[index].title,
+                  page.title,
                   style: AppTextStyles.h3,
                   textAlign: TextAlign.center,
                 ),
+
                 SizedBox(height: 10.h),
+
+                // Onboarding Description
                 Text(
-                  controller.onboardingPages[index].description,
+                  page.description,
                   style: AppTextStyles.bodyMedium.copyWith(
                     color: AppColors.secondaryText,
                   ),
                   textAlign: TextAlign.center,
                 ),
+
                 SizedBox(height: 20.h),
+
+                // Page Indicator Dots
                 Obx(
-                  () => Row(
+                      () => Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       controller.onboardingPages.length,
-                      (index) => AnimatedContainer(
+                          (dotIndex) => AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         margin: EdgeInsets.symmetric(horizontal: 4.w),
                         height: 6.h,
-                        width: controller.currentPage.value == index
-                            ? 36.w
-                            : 36.w,
+                        width: 36.w,
                         decoration: BoxDecoration(
-                          color: controller.currentPage.value == index
+                          color: controller.currentPage.value == dotIndex
                               ? AppColors.primary
                               : AppColors.secondaryText.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(12),
@@ -69,24 +84,30 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 SizedBox(height: 20.h),
+
+                // Primary Button: Skip to Get Started
                 CustomPrimaryButton(
                   text: "Get's Started",
                   onTap: () => Get.offNamed(AppRoutes.getGetStartedRoute()),
                 ),
 
                 SizedBox(height: 12.h),
+
+                // Secondary Button: Next or Finish
                 CustomSecondaryButton(
                   text: "Next",
                   onTap: () {
                     if (controller.currentPage.value <
                         controller.onboardingPages.length - 1) {
+                      // Move to next onboarding screen
                       _pageController.nextPage(
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       );
                     } else {
-                      // ✅ Navigate and prevent back
+                      // Final page: Navigate to Get Started and remove history
                       Get.offAllNamed(AppRoutes.getGetStartedRoute());
                     }
                   },

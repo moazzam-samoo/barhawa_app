@@ -6,6 +6,7 @@ class AppColors {
   static  Color primaryLight = Color(0xffD52941).withOpacity(20); // 20% opacity
   static const Color secondary  = Color(0xff231F20);
   static const Color lightBackground  = Color(0xffEFF1F3);
+  static const Color containers  = Color(0xffEBEEF2);
 
 
   //Text Colors
