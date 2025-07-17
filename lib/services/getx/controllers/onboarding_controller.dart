@@ -31,4 +31,5 @@ class OnboardingController {
       "Explore the class you want, study the class section, and join to start learning.",
     ),
   ];
+
 }

@@ -25,9 +25,7 @@ class GetStartedScreen extends StatelessWidget {
 
           // 🔽 Semi-transparent black overlay
           Positioned.fill(
-            child: Container(
-              color: Colors.black.withOpacity(0.55),
-            ),
+            child: Container(color: Colors.black.withOpacity(0.55)),
           ),
 
           // 🔽 Main Text Section (Top)
@@ -87,7 +85,7 @@ class GetStartedScreen extends StatelessWidget {
                 CustomPrimaryButton(
                   text: "Login",
                   onTap: () {
-                    Get.toNamed(AppRoutes.getCongratulationScreen());
+                    Get.toNamed(AppRoutes.getLoginScreen());
                   },
                   color: AppColors.primary,
                 ),
@@ -100,7 +98,7 @@ class GetStartedScreen extends StatelessWidget {
                   color: Colors.white,
                   textColor: Colors.white,
                   onTap: () {
-                    // TODO: Navigate to signup screen
+                   Get.toNamed(AppRoutes.getCreateAccountScreen());
                   },
                 ),
               ],
