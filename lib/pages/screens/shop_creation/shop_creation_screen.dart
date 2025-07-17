@@ -1,5 +1,6 @@
 import 'package:barhawa_app/utils/app_text_styles.dart';
 import 'package:barhawa_app/utils/colors.dart';
+import 'package:barhawa_app/utils/routes.dart';
 import 'package:barhawa_app/widgets/global/custom_dropdown.dart';
 import 'package:barhawa_app/widgets/global/image_upload.dart';
 import 'package:barhawa_app/widgets/global/label_text.dart';
@@ -78,6 +79,9 @@ class ShopCreationScreen extends StatelessWidget {
               CustomPrimaryButton(
                 text: "Next",
                 color: AppColors.primary,
+                onTap: () {
+                  Get.toNamed(AppRoutes.getShopDetailsScreen());
+                },
               ),
             ],
           ),

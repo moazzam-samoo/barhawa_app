@@ -4,34 +4,46 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:barhawa_app/utils/routes.dart';
-
 import 'firebase_options.dart';
 
+/// Main function: Initializes the Flutter framework and Firebase
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Initialize Firebase with platform-specific options
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MyApp());
 }
 
+/// Root widget of the application
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //Defined ScreenUtil Package for Responsive UI for every size of the screen.
+    // ScreenUtilInit is used for responsive UI design across all devices
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
+      designSize: const Size(375, 812), // Base design size (iPhone X dimensions)
+      minTextAdapt: true,               // Adapts text size for small screens
+      splitScreenMode: true,            // Supports split screen on tablets
+
       builder: (context, child) {
-        //replaced Material app to GetMaterialApp for stateManagement
+        // GetMaterialApp replaces MaterialApp to enable GetX features
         return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false, // Hides the debug banner
           title: 'Barhawa App',
-          //Defined own routes with GETx state management for Routing Easily and understandable
-          initialRoute: AppRoutes.getShopCreationScreen(),
+
+          // Initial screen when the app starts
+          initialRoute: AppRoutes.getSplashRoute(),
+
+          // Route configuration using GetX
           getPages: AppRoutes.routes,
+
+          // Optional: Add EasyLoading globally if you're using loading indicators
+          builder: EasyLoading.init(), // Enables global EasyLoading UI
         );
       },
     );
