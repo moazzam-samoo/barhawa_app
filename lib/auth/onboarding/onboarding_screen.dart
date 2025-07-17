@@ -65,11 +65,11 @@ class OnboardingScreen extends StatelessWidget {
 
                 // Page Indicator Dots
                 Obx(
-                      () => Row(
+                  () => Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       controller.onboardingPages.length,
-                          (dotIndex) => AnimatedContainer(
+                      (dotIndex) => AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         margin: EdgeInsets.symmetric(horizontal: 4.w),
                         height: 6.h,
@@ -90,7 +90,7 @@ class OnboardingScreen extends StatelessWidget {
                 // Primary Button: Skip to Get Started
                 CustomPrimaryButton(
                   text: "Get's Started",
-                  onTap: () => Get.offNamed(AppRoutes.getGetStartedRoute()),
+                  onTap: () => Get.offAllNamed(AppRoutes.getGetStartedRoute()),
                 ),
 
                 SizedBox(height: 12.h),

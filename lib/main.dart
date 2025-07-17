@@ -11,9 +11,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize Firebase with platform-specific options
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const MyApp());
 }
@@ -26,9 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ScreenUtilInit is used for responsive UI design across all devices
     return ScreenUtilInit(
-      designSize: const Size(375, 812), // Base design size (iPhone X dimensions)
-      minTextAdapt: true,               // Adapts text size for small screens
-      splitScreenMode: true,            // Supports split screen on tablets
+      designSize: const Size(
+        375,
+        812,
+      ), // Base design size (iPhone X dimensions)
+      minTextAdapt: true, // Adapts text size for small screens
+      splitScreenMode: true, // Supports split screen on tablets
 
       builder: (context, child) {
         // GetMaterialApp replaces MaterialApp to enable GetX features

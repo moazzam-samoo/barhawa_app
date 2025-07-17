@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:barhawa_app/utils/colors.dart'; // Make sure to import your AppColors
+import 'package:barhawa_app/utils/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -8,6 +8,8 @@ class CustomTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool isEnabled;
   final int maxLines;
+  final bool obscureText;
+  final Widget? suffixIcon;
 
   const CustomTextField({
     super.key,
@@ -16,6 +18,8 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.isEnabled = true,
     this.maxLines = 1,
+    this.obscureText = false, // 🔧 Optional by default
+    this.suffixIcon,          // 🔧 Optional
   });
 
   @override
@@ -24,19 +28,21 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       enabled: isEnabled,
       keyboardType: keyboardType,
-      maxLines: maxLines,
+      maxLines: obscureText ? 1 : maxLines, // maxLines must be 1 for obscured text
+      obscureText: obscureText,
       style: TextStyle(fontSize: 14.sp, color: Colors.black),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         hintText: hintText,
         hintStyle: TextStyle(color: Colors.grey, fontSize: 14.sp),
+        suffixIcon: suffixIcon, // ✅ Only shows if provided
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
           borderSide: const BorderSide(color: Color(0xffD0D5DD)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
-          borderSide: const BorderSide(color: AppColors.primary), // 🔥 Your primary color here
+          borderSide: const BorderSide(color: AppColors.primary),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
