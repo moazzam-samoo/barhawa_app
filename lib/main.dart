@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           title: 'Barhawa App',
 
           // Initial screen when the app starts
-          initialRoute: AppRoutes.getSplashRoute(),
+          initialRoute: AppRoutes.getOTPScreen(),
 
           // Route configuration using GetX
           getPages: AppRoutes.routes,

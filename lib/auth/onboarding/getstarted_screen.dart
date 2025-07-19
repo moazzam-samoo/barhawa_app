@@ -98,7 +98,7 @@ class GetStartedScreen extends StatelessWidget {
                   color: Colors.white,
                   textColor: Colors.white,
                   onTap: () {
-                   Get.toNamed(AppRoutes.getCreateAccountScreen());
+                    Get.toNamed(AppRoutes.getCreateAccountScreen());
                   },
                 ),
               ],
