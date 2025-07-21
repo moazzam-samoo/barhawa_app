@@ -2,6 +2,7 @@
 import 'package:barhawa_app/services/getx/controllers/auth_controllers/create_account_controller.dart';
 import 'package:barhawa_app/utils/app_text_styles.dart';
 import 'package:barhawa_app/utils/colors.dart';
+import 'package:barhawa_app/utils/routes.dart';
 import 'package:barhawa_app/widgets/global/label_text.dart';
 import 'package:barhawa_app/widgets/global/primary_button.dart';
 import 'package:barhawa_app/widgets/global/textField.dart';
@@ -166,7 +167,9 @@ class CreateAccountScreen extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     onTap: () {
-                      Get.back(); // Navigate to previous screen (login)
+                      Get.toNamed(
+                        AppRoutes.getLoginScreen(),
+                      ); // Navigate to previous screen (login)
                     },
                     child: Text(
                       "Already have an account?",

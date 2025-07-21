@@ -1,9 +1,13 @@
 import 'package:barhawa_app/auth/authentication_screens/create_account_screen/create_account_screen.dart';
+import 'package:barhawa_app/auth/authentication_screens/forgot_password_screen.dart';
+import 'package:barhawa_app/auth/authentication_screens/otp_screen.dart';
+import 'package:barhawa_app/auth/authentication_screens/reset_password_screen.dart';
 import 'package:barhawa_app/auth/onboarding/getstarted_screen.dart';
 import 'package:barhawa_app/auth/onboarding/onboarding_screen.dart';
 import 'package:barhawa_app/auth/onboarding/user_confirmation_screen.dart';
 import 'package:barhawa_app/pages/screens/congratulation_screen.dart';
 import 'package:barhawa_app/pages/screens/shop_details_confirmation/shop_detail_confirmation.dart';
+import 'package:barhawa_app/services/getx/controllers/auth_controllers/forgo_password_controller.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../auth/authentication_screens/login_screen/email_and_phone_screen.dart';
 import '../auth/splash_screen.dart';
@@ -17,6 +21,9 @@ class AppRoutes {
   static String onboarding = "/onboarding";
   static String loginScreen = "/loginScreen";
   static String createAccountScreen = "/createAccountScreen";
+  static String forgotPasswordScreen = "/forgotPasswordScreen";
+  static String otpScreen = "/otpScreen";
+  static String resetPasswordScreen = "/resetPasswordScreen";
   static String userConfirmation = "/userConfirmation";
   static String getStarted = "/getStarted";
   static String congratulationScreen = "/congratulationScreen";
@@ -28,6 +35,9 @@ class AppRoutes {
   static String getOnboardingRoute() => onboarding;
   static String getLoginScreen() => loginScreen;
   static String getCreateAccountScreen() => createAccountScreen;
+  static String getForgotPasswordScreen() => forgotPasswordScreen;
+  static String getOTPScreen() => otpScreen;
+  static String getResetPasswordScreen() => resetPasswordScreen;
   static String getUserConfirmationRoute() => userConfirmation;
   static String getGetStartedRoute() => getStarted;
   static String getCongratulationScreen() => congratulationScreen;
@@ -49,6 +59,12 @@ class AppRoutes {
     GetPage(name: loginScreen, page: () => LoginScreen()),
 
     GetPage(name: createAccountScreen, page: () => CreateAccountScreen()),
+
+    GetPage(name: forgotPasswordScreen, page: () => ForgotPasswordScreen()),
+
+    GetPage(name: otpScreen, page: () => OTPScreen()),
+
+    GetPage(name: resetPasswordScreen, page: () => ResetPasswordScreen()),
 
     // Get started screen route
     GetPage(name: getStarted, page: () => GetStartedScreen()),
