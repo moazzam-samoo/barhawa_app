@@ -1,4 +1,4 @@
-import 'package:barhawa_app/services/getx/controllers/auth_controllers/home_controller.dart';
+import 'package:barhawa_app/services/getx/controllers/home_controller.dart';
 import 'package:barhawa_app/widgets/global/label_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

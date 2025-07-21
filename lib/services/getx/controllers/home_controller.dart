@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../models/sale_model.dart';
+import '../../models/sale_model.dart';
 
 class HomeController extends GetxController {
   // Observables for stats
