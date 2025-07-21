@@ -6,6 +6,8 @@ import 'package:barhawa_app/auth/onboarding/getstarted_screen.dart';
 import 'package:barhawa_app/auth/onboarding/onboarding_screen.dart';
 import 'package:barhawa_app/auth/onboarding/user_confirmation_screen.dart';
 import 'package:barhawa_app/pages/screens/congratulation_screen.dart';
+import 'package:barhawa_app/pages/screens/home_screen.dart';
+import 'package:barhawa_app/pages/screens/main_view/main_navigation_view.dart';
 import 'package:barhawa_app/pages/screens/shop_details_confirmation/shop_detail_confirmation.dart';
 import 'package:barhawa_app/services/getx/controllers/auth_controllers/forgo_password_controller.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -29,6 +31,8 @@ class AppRoutes {
   static String congratulationScreen = "/congratulationScreen";
   static String shopCreation = "/shopCreation";
   static String shopDetails = "/shopDetails";
+  static String homeScreen = "/homeScreen";
+  static String mainNavigationScreen = "/mainNavigationScreen";
 
   // Helper methods to get route strings
   static String getSplashRoute() => splash;
@@ -43,6 +47,8 @@ class AppRoutes {
   static String getCongratulationScreen() => congratulationScreen;
   static String getShopCreationScreen() => shopCreation;
   static String getShopDetailsScreen() => shopDetails;
+  static String getMainNavigationScreen() => mainNavigationScreen;
+  static String getHomeScreen() => homeScreen;
 
   /// List of all GetX pages used in the application.
   /// Each GetPage maps a route name to its screen widget.
@@ -77,5 +83,8 @@ class AppRoutes {
 
     // Shop details screen route
     GetPage(name: shopDetails, page: () => ShopDetailConfirmation()),
+    GetPage(name: shopDetails, page: () => ShopDetailConfirmation()),
+    GetPage(name: homeScreen, page: () => HomeScreen()),
+    GetPage(name: mainNavigationScreen, page: () => MainNavigationView()),
   ];
 }

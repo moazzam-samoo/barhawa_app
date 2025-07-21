@@ -8,6 +8,7 @@ class LabelText extends StatelessWidget {
   final TextAlign? textAlign;
   final int? maxLines;
   final TextOverflow? overflow;
+  final TextStyle? style;
 
   const LabelText({
     super.key,
@@ -16,6 +17,7 @@ class LabelText extends StatelessWidget {
     this.textAlign,
     this.maxLines,
     this.overflow,
+    this.style,
   });
 
   @override
@@ -27,7 +29,9 @@ class LabelText extends StatelessWidget {
         textAlign: textAlign,
         maxLines: maxLines,
         overflow: overflow ?? TextOverflow.visible,
-        style: AppTextStyles.bodyLarge.copyWith(color: AppColors.primaryText),
+        style:
+            style ??
+            AppTextStyles.bodyLarge.copyWith(color: AppColors.primaryText),
       ),
     );
   }
